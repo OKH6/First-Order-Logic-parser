@@ -1,0 +1,32 @@
+Terminals : 'w'  'x'  'y'  'z'  'C'  'D'  '='  '\land'  '\lor'  '\implies'  '\iff'  '\neg'  '\exists'  '\forall'  '('  ')'  ','  'P'  'Q'
+
+Non Terminals : 'Start'  'Expression'  'Predicate'  'Equality'  'Conncetive'  'Var'  'Const'  'VAR_or_CONST'  'Equality_Symbol'  'QuantSymbol'  'Connective_Symbol'  'Negative_Symbol'
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Production rules :
+
+
+Start --> Predicate |  Quantifier_Symbol Var Start |  ( Expression ) |  Negative_Symbol Start
+
+Expression --> Equality |  Conncetive
+
+Predicate --> P ( Var , Var ) |  Q ( Var )
+
+Equality --> VAR_or_CONST Equality_Symbol VAR_or_CONST
+
+Conncetive --> Start Connective_Symbol Start
+
+VAR_or_CONST --> Const |  Var
+
+Var --> w |  x |  y |  z
+
+Const --> C |  D
+
+Equality_Symbol --> =
+
+Quantifier_Symbol --> \exists |  \forall
+
+Connective_Symbol --> \land |  \lor |  \implies |  \iff
+
+Negative_Symbol --> \neg
+
